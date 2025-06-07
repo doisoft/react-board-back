@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: board
+  datasource:
+    url: jdbc:mysql://158.180.73.42:3309/board?characterEncoding=UTF-8&serverTimezone=UTC
+    username: developer
+    password: P!ssw0rd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 110MB
+
+server:
+  port: 4000
+
+securty-key: my-super-secure-jwt-S3cretk3y-1234567890-0987654321
