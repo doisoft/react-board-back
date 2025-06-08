@@ -16,3 +16,6 @@ server:
   port: 4000
 
 securty-key: my-super-secure-jwt-S3cretk3y-1234567890-0987654321
+
+file.path: /Users/user01/dev/fileUpload/
+file.url: http://localhost:4000/file/
