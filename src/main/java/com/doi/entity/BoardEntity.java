@@ -1,9 +1,13 @@
 package com.doi.entity;
 
+import com.doi.dto.request.board.PostBoardRequestDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * packageName  : com.doi.entity
@@ -31,7 +35,7 @@ public class BoardEntity {
 
     private String content;
 
-    private String writeDateTime;
+    private String writeDatetime;
 
     private int favoriteCount;
 
@@ -40,4 +44,14 @@ public class BoardEntity {
     private int viewCount;
 
     private String writerEmail;
+
+    public BoardEntity(PostBoardRequestDto dto, String email) {
+        this.title = dto.getTitle();
+        this.content = dto.getContent();
+        this.writeDatetime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        this.writerEmail = email;
+        this.favoriteCount = 0;
+        this.commentCount = 0;
+        this.viewCount = 0;
+    }
 }
